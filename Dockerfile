@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3021
 
 # Command to run the application
-CMD [ "index.js"]
+CMD [ "start"]
