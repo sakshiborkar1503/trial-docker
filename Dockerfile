@@ -1,20 +1,16 @@
-# Use the official Node.js image
-FROM node:latest
+FROM node:14
 
-# Create and set the working directory
+# Create app directory
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json
+# Install app dependencies
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
 
-# Copy the rest of the application files
+# Bundle app source
 COPY . .
 
-# Expose the port the app runs on 
+# Expose port and start application
 EXPOSE 3021
+CMD ["node", "start.js"]
 
-# Command to run the application
-CMD [ "start"]
