@@ -1,7 +1,7 @@
 FROM node:14
 
 # Create app directory
-WORKDIR internal/modules/cjs/loader.js
+WORKDIR /usr/src/app
 
 # Install app dependencies
 COPY package*.json ./
