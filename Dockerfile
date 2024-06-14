@@ -1,17 +1,15 @@
-FROM ubuntu:latest
+FROM node:14
 
-WORKDIR /app
+# Create app directory
+WORKDIR /usr/src/app
 
-COPY . .  # Copy current directory contents to /app within container
+# Install app dependencies
+COPY package*.json ./
+RUN npm install
 
-RUN apt-get update && apt-get install -y nodejs
+# Bundle app source
+COPY . .
 
-# Install app dependencie
-# RUN npm install
-
-# Set environment variables 
-# ENV MY_VAR=3021
-
-EXPOSE 3000  # Optional: Expose port for container
-
-CMD [ "node", "index.js" ]  # Run the application 
+# Expose port and start application
+EXPOSE 3021
+CMD ["node", "index.js"]
