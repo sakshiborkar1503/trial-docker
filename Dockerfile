@@ -12,4 +12,4 @@ COPY . .
 
 # Expose port and start application
 EXPOSE 3021
-CMD ["node", "index.js"]
+CMD ["node"]
