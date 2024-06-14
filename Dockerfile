@@ -12,5 +12,5 @@ COPY . .
 
 # Expose port and start application
 EXPOSE 3021
-CMD ["node", "start.js"]
+CMD ["node", "index.js"]
 
